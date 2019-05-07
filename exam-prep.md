@@ -169,7 +169,20 @@ server system.
 ## Answer 1 (c)
 
 ```
-calculations
+MTTR = 20 hours
+MTBF = 10 days
+
+ρ = MTTR /(MTBF + MTTR)
+  = 20/((10 * 24) + 20)
+  = 20/(240 + 20)
+  = 20/260
+  = 0.077
+
+= 1 – ρ^n
+= 1 - 0.077^4
+= 1 - 0.00003515
+= 0.999964
+= 99.99%
 ```
 
 ## Question 2 (a)
@@ -243,8 +256,35 @@ to 32 cores. Comment on the effect of introducing more cores.
 ## Answer 2 (c)
 
 ```
-calculations
+S = N/(1 + σ (N – 1))
+
+σ = 0.25
+
+N = 1
+S = N/(1 + σ (N – 1))
+  = 1/(1 + 0.5 * (1 - 1))
+  = 1/1
+  = 1
+
+N = 8
+S = N/(1 + σ (N – 1))
+  = 8/(1 + 0.5 * (8 - 1))
+  = 8/(1 + 0.5 * 7)
+  = 8/(1 + 3.5)
+  = 8/4.5
+  = 1.78
+
+N = 32
+S = N/(1 + σ (N – 1))
+  = 32/(1 + 0.5 * (32 - 1))
+  = 32/(1 + 0.5 * 31)
+  = 32/(1 + 15.5)
+  = 32/16.5
+  = 1.94
+
 ```
+
+By scaling out to more processors for `σ = 0.25` it can be seen that there is only a marginal increase.
 
 ## Question 3 (a)
 
